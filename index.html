@@ -9,12 +9,10 @@
 <body>
     <!-- Page 1: Information Page -->
     <div id="info-page">
-        <center>
-            <h1>Cipher Information</h1>
-            <p>Learn about Caesar and Vigenere Ciphers</p>
-        </center>
+        <h1>Cipher Information</h1>
+        <p class="center">Learn about Caesar and Vigenere Ciphers - Encrypt and Decrypt Messages!</p>
         
-        <table border="1" width="100%">
+        <table>
             <tr>
                 <td width="50%">
                     <h2>Caesar Cipher</h2>
@@ -22,10 +20,10 @@
                     <p>Caesar Cipher is a simple way to hide messages. It was used by Julius Caesar long ago to send secret military messages.</p>
                     
                     <p><b>How does it work?</b></p>
-                    <p>You move each letter in the alphabet by a fixed number. Like if you move by 3, A becomes D, B becomes E, etc. The process wraps around from Z to A.</p>
+                    <p>You move each letter in the alphabet by a fixed number. Like if you move by 3, A becomes D, B becomes E, etc. To decrypt, you move backward by the same number.</p>
                     
                     <p><b>Example:</b></p>
-                    <p>HELLO with shift 3 becomes KHOOR</p>
+                    <p>HELLO with shift 3 becomes KHOOR. To decrypt KHOOR with shift 3, you get back HELLO</p>
                     
                     <p><b>Additional Facts:</b></p>
                     <p>It's very easy to break if you know the pattern. There are only 25 possible shifts to try!</p>
@@ -39,10 +37,10 @@
                     <p>Vigenere Cipher is much stronger than Caesar Cipher. It uses a keyword to encrypt messages and was invented by Blaise de Vigenère in 1586.</p>
                     
                     <p><b>How does it work?</b></p>
-                    <p>You use a keyword and repeat it over your message. Each letter of the keyword tells you how much to shift each letter in your message.</p>
+                    <p>You use a keyword and repeat it over your message. Each letter of the keyword tells you how much to shift each letter. To decrypt, you shift backward using the same keyword.</p>
                     
                     <p><b>Example:</b></p>
-                    <p>HELLO with keyword KEY becomes RIJVS</p>
+                    <p>HELLO with keyword KEY becomes RIJVS. To decrypt RIJVS with keyword KEY, you get back HELLO</p>
                     
                     <p><b>Additional Facts:</b></p>
                     <p>It was once called 'the unbreakable cipher' but can be cracked with modern techniques.</p>
@@ -53,64 +51,55 @@
             </tr>
         </table>
         
-        <br><br>
-        <center>
+        <div class="center">
             <a href="#tool-page" class="big-button">Go to Cipher Tool</a>
-        </center>
+        </div>
     </div>
 
     <!-- Page 2: Cipher Tool Page -->
-    <div id="tool-page">
-        <center>
-            <h1>Cipher Tool</h1>
-        </center>
-        
-        <br><br>
-        
-        <table border="1" width="100%">
-            <tr>
-                <td width="50%" valign="top">
-                    <h2>Caesar Cipher</h2>
-                    <form id="caesar-form">
-                        <p>Enter Text:</p>
-                        <input type="text" id="caesar-text" size="30">
-                        
-                        <p>Enter Shift Value:</p>
-                        <input type="number" id="caesar-shift" size="30" min="1" max="25">
-                        
-                        <br><br>
-                        <input type="button" value="Encrypt" class="blue-button" onclick="encryptCaesar()">
-                        <br><br>
-                        
-                        <p>Result:</p>
-                        <input type="text" id="caesar-result" size="30" readonly>
-                    </form>
-                </td>
-                
-                <td width="50%" valign="top">
-                    <h2>Vigenere Cipher</h2>
-                    <form id="vigenere-form">
-                        <p>Enter Text:</p>
-                        <input type="text" id="vigenere-text" size="30">
-                        
-                        <p>Enter Key:</p>
-                        <input type="text" id="vigenere-key" size="30">
-                        
-                        <br><br>
-                        <input type="button" value="Encrypt" class="blue-button" onclick="encryptVigenere()">
-                        <br><br>
-                        
-                        <p>Result:</p>
-                        <input type="text" id="vigenere-result" size="30" readonly>
-                    </form>
-                </td>
-            </tr>
-        </table>
-        
-        <br><br>
-        <center>
+    <div id="tool-page" class="hidden">
+        <h1>Cipher Tool</h1>
+        <div class="center">
             <a href="#info-page" class="big-button">Back to Information</a>
-        </center>
+        </div>
+        
+        <div class="tool-container">
+            <div class="cipher-section">
+                <div class="cipher-title">Caesar Cipher</div>
+                
+                <label>Enter text</label>
+                <input type="text" id="caesar-text" placeholder="Enter text">
+                
+                <label>Enter shift value</label>
+                <input type="number" id="caesar-shift" placeholder="Enter shift value" min="1" max="25">
+                
+                <div class="button-row">
+                    <button class="encrypt-btn" onclick="encryptCaesar()">Encrypt</button>
+                    <button class="decrypt-btn" onclick="decryptCaesar()">Decrypt</button>
+                </div>
+                
+                <label>Result:</label>
+                <textarea id="caesar-result" readonly placeholder="Result will appear here..."></textarea>
+            </div>
+            
+            <div class="cipher-section">
+                <div class="cipher-title">Vigenere Cipher</div>
+                
+                <label>Enter text</label>
+                <input type="text" id="vigenere-text" placeholder="Enter text">
+                
+                <label>Enter key</label>
+                <input type="text" id="vigenere-key" placeholder="Enter key">
+                
+                <div class="button-row">
+                    <button class="encrypt-btn" onclick="encryptVigenere()">Encrypt</button>
+                    <button class="decrypt-btn" onclick="decryptVigenere()">Decrypt</button>
+                </div>
+                
+                <label>Result:</label>
+                <textarea id="vigenere-result" readonly placeholder="Result will appear here..."></textarea>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>
