@@ -1,0 +1,140 @@
+body {
+    background: #f0f4ff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #1976d2;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #2196f3;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border: 2px solid #2196f3;
+}
+
+td {
+    border: 1px solid #64b5f6;
+    padding: 20px;
+    vertical-align: top;
+}
+
+.big-button {
+    background: #2196f3;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.big-button:hover {
+    background: #1976d2;
+}
+
+.cipher-section {
+    background: white;
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px 0;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cipher-title {
+    color: #2196f3;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #bbdefb;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #2196f3;
+    outline: none;
+}
+
+button {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1976d2;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #bbdefb;
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 80px;
+    font-family: monospace;
+    background: #e3f2fd;
+    resize: vertical;
+}
+
+label {
+    font-weight: bold;
+    color: #1976d2;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#info-page:target ~ #tool-page {
+    display: none;
+}
+
+#tool-page:target ~ #info-page {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.tool-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}

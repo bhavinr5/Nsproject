@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Information & Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1: Information Page -->
+    <div id="info-page">
+        <center>
+            <h1>Cipher Information</h1>
+            <p>Learn about Caesar and Vigenere Ciphers</p>
+        </center>
+        
+        <table border="1" width="100%">
+            <tr>
+                <td width="50%">
+                    <h2>Caesar Cipher</h2>
+                    <p><b>What is it?</b></p>
+                    <p>Caesar Cipher is a simple way to hide messages. It was used by Julius Caesar long ago to send secret military messages.</p>
+                    
+                    <p><b>How does it work?</b></p>
+                    <p>You move each letter in the alphabet by a fixed number. Like if you move by 3, A becomes D, B becomes E, etc. The process wraps around from Z to A.</p>
+                    
+                    <p><b>Example:</b></p>
+                    <p>HELLO with shift 3 becomes KHOOR</p>
+                    
+                    <p><b>Additional Facts:</b></p>
+                    <p>It's very easy to break if you know the pattern. There are only 25 possible shifts to try!</p>
+                    <p>Today it's mainly used for learning about cryptography and in simple puzzles.</p>
+                    <p>The famous ROT13 is a Caesar cipher with shift 13, often used in online forums.</p>
+                    <p>Julius Caesar actually used a shift of 3 for most of his secret communications.</p>
+                </td>
+                <td width="50%">
+                    <h2>Vigenere Cipher</h2>
+                    <p><b>What is it?</b></p>
+                    <p>Vigenere Cipher is much stronger than Caesar Cipher. It uses a keyword to encrypt messages and was invented by Blaise de Vigenère in 1586.</p>
+                    
+                    <p><b>How does it work?</b></p>
+                    <p>You use a keyword and repeat it over your message. Each letter of the keyword tells you how much to shift each letter in your message.</p>
+                    
+                    <p><b>Example:</b></p>
+                    <p>HELLO with keyword KEY becomes RIJVS</p>
+                    
+                    <p><b>Additional Facts:</b></p>
+                    <p>It was once called 'the unbreakable cipher' but can be cracked with modern techniques.</p>
+                    <p>It's more secure than Caesar cipher but still not safe for real secrets today.</p>
+                    <p>The longer the keyword, the stronger the encryption becomes.</p>
+                    <p>It remained unbroken until Friedrich Kasiski developed a method to crack it in 1863.</p>
+                </td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <center>
+            <a href="#tool-page" class="big-button">Go to Cipher Tool</a>
+        </center>
+    </div>
+
+    <!-- Page 2: Cipher Tool Page -->
+    <div id="tool-page">
+        <center>
+            <h1>Cipher Tool</h1>
+        </center>
+        
+        <br><br>
+        
+        <table border="1" width="100%">
+            <tr>
+                <td width="50%" valign="top">
+                    <h2>Caesar Cipher</h2>
+                    <form id="caesar-form">
+                        <p>Enter Text:</p>
+                        <input type="text" id="caesar-text" size="30">
+                        
+                        <p>Enter Shift Value:</p>
+                        <input type="number" id="caesar-shift" size="30" min="1" max="25">
+                        
+                        <br><br>
+                        <input type="button" value="Encrypt" class="blue-button" onclick="encryptCaesar()">
+                        <br><br>
+                        
+                        <p>Result:</p>
+                        <input type="text" id="caesar-result" size="30" readonly>
+                    </form>
+                </td>
+                
+                <td width="50%" valign="top">
+                    <h2>Vigenere Cipher</h2>
+                    <form id="vigenere-form">
+                        <p>Enter Text:</p>
+                        <input type="text" id="vigenere-text" size="30">
+                        
+                        <p>Enter Key:</p>
+                        <input type="text" id="vigenere-key" size="30">
+                        
+                        <br><br>
+                        <input type="button" value="Encrypt" class="blue-button" onclick="encryptVigenere()">
+                        <br><br>
+                        
+                        <p>Result:</p>
+                        <input type="text" id="vigenere-result" size="30" readonly>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        
+        <br><br>
+        <center>
+            <a href="#info-page" class="big-button">Back to Information</a>
+        </center>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
